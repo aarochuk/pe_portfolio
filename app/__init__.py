@@ -124,6 +124,3 @@ def delete_timeline_post(post_id=None):
 @app.route('/timeline')
 def timeline():
     return render_template('timeline.html', title="Timeline")
-
-if __name__ == '__main__':
-    app.run(debug=True)
