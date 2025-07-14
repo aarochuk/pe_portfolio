@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 2em;
+  }
+  form {
+    max-width: 400px;
+    margin-bottom: 2em;
+  }
+  input, textarea {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.5em;
+  }
+  button {
+    padding: 0.5em 1em;
+  }
+  .success {
+    color: green;
+  }
+  .post {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 6px;
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+  }
+  .gravatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+  .post-content {
+    flex: 1;
+  }
+  .post-meta {
+    font-size: 0.85em;
+    color: #555;
+  }

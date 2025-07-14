@@ -120,3 +120,10 @@ def delete_timeline_post(post_id=None):
             return jsonify({'message': f'Latest timeline post with id {post_id} deleted successfully.'}), 200
         else:
             return jsonify({'message': 'There are no timeline posts to delete'}), 404
+
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', title="Timeline")
+
+if __name__ == '__main__':
+    app.run(debug=True)
