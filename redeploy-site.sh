@@ -7,7 +7,7 @@ echo "Starting Flask application redeployment..."
 
 # Step 1: Navigate to project folder
 echo "Step 2: Navigating to project folder..."
-PROJECT_DIR="$HOME/25.SUM.B3-Portfolio-Site"
+PROJECT_DIR="$HOME/pe-portfolio-site"
 
 if [ ! -d "$PROJECT_DIR" ]; then
     echo "Error: Project directory $PROJECT_DIR not found!"
