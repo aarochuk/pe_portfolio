@@ -6,7 +6,7 @@
 echo "Starting Flask application redeployment..."
 
 # Step 1: Navigate to project folder
-echo "Step 2: Navigating to project folder..."
+echo "Step 1: Navigating to project folder..."
 PROJECT_DIR="$HOME/pe-portfolio-site"
 
 if [ ! -d "$PROJECT_DIR" ]; then
@@ -22,8 +22,12 @@ echo "Step 3: Updating git repository..."
 git fetch && git reset origin/main --hard
 echo "Git repository updated to latest main branch"
 
-# Step 3: Spin containers down to prevent out of memory issues
-docker compose -f docker-compose.prod.yml down
+# Step 3: Activate virtual environment and download dependencies
+echo "Activating virtual environment"
+source venv/bin/activate
+echo "Installing dependencies"
+pip install -r requirements.txt
 
-# Step 4: Run containers
-docker compose -f docker-compose.prod.yml up -d --build
+# Step 4: Restart my portfolio service
+systemctl daemon-reload
+systemctl restart myportfolio
