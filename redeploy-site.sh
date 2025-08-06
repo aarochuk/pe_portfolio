@@ -28,6 +28,8 @@ source venv/bin/activate
 echo "Installing dependencies"
 pip install -r requirements.txt
 
-# Step 4: Restart my portfolio service
-systemctl daemon-reload
-systemctl restart myportfolio
+# Step 4: Spin containers down to prevent out of memory issues
+docker compose -f docker-compose.prod.yml down
+
+# Step 5: Run containers
+docker compose -f docker-compose.prod.yml up -d --build
